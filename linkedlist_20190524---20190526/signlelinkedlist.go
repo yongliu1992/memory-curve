@@ -21,7 +21,7 @@ func NewListNode(v interface{}) *ListNode {
 }
 
 func (This *ListNode) GetNextNode() *ListNode {
-	return This.next()
+	return This.next
 }
 
 func (This *ListNode) GetValue() interface{} {
@@ -82,10 +82,10 @@ func (This *LinkedList) InsertToTail(v interface{}) bool {
 
 //通过索引查找节点
 func (This *LinkedList) FindByIndex(index uint) *ListNode {
-	if index > This.length {
+	if index >= This.length {
 		return nil
 	}
-	cur := This.head
+	cur := This.head.next
 	var i uint = 0
 	for ; i < index; i++ {
 		cur = cur.next
