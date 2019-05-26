@@ -1,4 +1,4 @@
-package linkedlist_20190524___20190526
+package linkedlist_20190524___20190525
 
 /*
 思路1：开一个栈存放链表前半段

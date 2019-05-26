@@ -1,4 +1,4 @@
-package linkedlist_20190524___20190526
+package linkedlist_20190524___20190525
 
 import "fmt"
 
