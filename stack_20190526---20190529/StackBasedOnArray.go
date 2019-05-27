@@ -57,7 +57,7 @@ func (This *ArrayStack) Flush() {
 
 func (This *ArrayStack) Print() {
 	if This.IsEmpty() {
-		fmt.Println("empty statck")
+		fmt.Println("empty stack")
 	} else {
 		for i := This.top; i >= 0; i-- {
 			fmt.Println(This.data[i])
