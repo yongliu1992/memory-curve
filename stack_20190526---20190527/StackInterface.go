@@ -1,4 +1,4 @@
-package stack_20190526___20190529
+package stack_20190526___20190527
 
 type Stack interface {
 	Push(v interface{})
