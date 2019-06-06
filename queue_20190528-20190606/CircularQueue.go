@@ -1,24 +1,25 @@
-package queue_20190528_20190530
+package queue_20190528_20190606
 
 import "fmt"
 
 type CircularQueue struct {
-	q []interface{}
+	q        []interface{}
 	capacity int
-	head int
-	tail int
+	head     int
+	tail     int
 }
 
-func NewCircularQueue(n int) *CircularQueue  {
+func NewCircularQueue(n int) *CircularQueue {
 	if n == 0 {
 		return nil
 	}
-	return &CircularQueue{make([]interface{},n),n,0,0}
+	return &CircularQueue{make([]interface{}, n), n, 0, 0}
 }
+
 /*
  *栈空条件：head==tail为true
  */
-func (This *CircularQueue) IsEmpty()bool  {
+func (This *CircularQueue) IsEmpty() bool {
 	if This.head == This.tail {
 		return true
 	}
@@ -29,7 +30,7 @@ func (This *CircularQueue) IsEmpty()bool  {
  *栈满条件：(tail+1)%capacity==head为true
  */
 
-func (This *CircularQueue) IsFull() bool  {
+func (This *CircularQueue) IsFull() bool {
 	if This.head == (This.tail+1)%This.capacity {
 		return true
 	}
@@ -41,23 +42,23 @@ func (This *CircularQueue) EnQueue(v interface{}) bool {
 		return false
 	}
 	This.q[This.tail] = v
-	This.tail = (This.tail+1) % This.capacity
-	return  true
+	This.tail = (This.tail + 1) % This.capacity
+	return true
 }
 
-func (This *CircularQueue) DeQueue() interface{}  {
+func (This *CircularQueue) DeQueue() interface{} {
 	if This.IsEmpty() {
 		return nil
 	}
 	v := This.q[This.head]
-	This.head = (This.head+1) % This.capacity
+	This.head = (This.head + 1) % This.capacity
 	return v
 }
 
-func (This *CircularQueue) String()string  {
-	 if This.IsEmpty() {
-	 	return "empty queue"
-	 }
+func (This *CircularQueue) String() string {
+	if This.IsEmpty() {
+		return "empty queue"
+	}
 	result := "head"
 	var i = This.head
 	for true {
@@ -71,5 +72,3 @@ func (This *CircularQueue) String()string  {
 	return result
 
 }
-
-

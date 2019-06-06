@@ -1,9 +1,9 @@
-package queue_20190528_20190530
+package queue_20190528_20190606
 
 import "testing"
 
-func TestCircularQueue_EnQueue(t *testing.T) {
-	q := NewCircularQueue(5)
+func TestListQueue_EnQueue(t *testing.T) {
+	q := NewLinkedListQueue()
 	q.EnQueue(1)
 	q.EnQueue(2)
 	q.EnQueue(3)
@@ -13,8 +13,8 @@ func TestCircularQueue_EnQueue(t *testing.T) {
 	t.Log(q)
 }
 
-func TestCircularQueue_DeQueue(t *testing.T) {
-	q := NewCircularQueue(5)
+func TestListQueue_DeQueue(t *testing.T) {
+	q := NewLinkedListQueue()
 	q.EnQueue(1)
 	q.EnQueue(2)
 	q.EnQueue(3)
@@ -22,9 +22,7 @@ func TestCircularQueue_DeQueue(t *testing.T) {
 	q.EnQueue(5)
 	q.EnQueue(6)
 	t.Log(q)
-	t.Log(q.DeQueue())
-	t.Log(q)
-	q.EnQueue(5)
+	q.DeQueue()
 	t.Log(q)
 	q.DeQueue()
 	t.Log(q)
@@ -35,4 +33,3 @@ func TestCircularQueue_DeQueue(t *testing.T) {
 	q.DeQueue()
 	t.Log(q)
 }
-
